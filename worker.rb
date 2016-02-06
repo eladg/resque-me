@@ -1,7 +1,16 @@
-class WordProcessorWorker
-  @queue = :worker
-  def self.perform(word)
-    puts ">> Processing: #{word}"
-    sleep(0.1)
+class TicketsQueue
+  @queue = :tickets_queue
+  def self.perform(json)
   end
+end
+
+class BannedOrder
+  @queue = :banned
+  def self.perform(word)
+  end
+end
+
+def process_order(order)
+  # process order
+  puts "got: #{order}"
 end
